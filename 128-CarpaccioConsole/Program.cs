@@ -15,6 +15,8 @@ namespace _128_CarpaccioConsole
 
 			terminal.DisplayQuantityQuestion();
 			terminal.AskAndDisplayQuantity();
+			terminal.DisplayPriceQuestion();
+			terminal.AskAndDisplayPrice();
 
 			Console.ReadLine();
 		}

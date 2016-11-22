@@ -27,5 +27,16 @@ namespace _128_CarpaccioMsTest
 			string quantity = _console.ReadLine();
 			_console.WriteLine(quantity.Replace(Environment.NewLine,""));
 		}
+
+		public void DisplayPriceQuestion()
+		{
+			_console.WriteLine("Entrez un prix");
+		}
+
+		public void AskAndDisplayPrice()
+		{
+			string price = _console.ReadLine();
+			_console.WriteLine(price.Replace(Environment.NewLine, ""));
+		}
 	}
 }
