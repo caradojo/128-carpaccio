@@ -56,8 +56,6 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="CarpaccioTermialShould.cs" />
-    <Compile Include="TestConsole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
