@@ -38,5 +38,10 @@ namespace _128_CarpaccioMsTest
 			string price = _console.ReadLine();
 			_console.WriteLine(price.Replace(Environment.NewLine, ""));
 		}
+
+		public void DisplayTotal(int i)
+		{
+			_console.WriteLine(String.Format("Total : {0:F} €", i));
+		}
 	}
 }
