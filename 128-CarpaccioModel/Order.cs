@@ -1,4 +1,4 @@
-﻿namespace _128_CarpaccioFonctionnalTest
+﻿namespace _128_CarpaccioModel
 {
 	public class Order
 	{
