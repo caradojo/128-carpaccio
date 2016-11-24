@@ -4,12 +4,12 @@
 	{
 		protected bool Equals(Order other)
 		{
-			return _amout.Equals(other._amout);
+			return Amout.Equals(other.Amout);
 		}
 
 		public override int GetHashCode()
 		{
-			return _amout.GetHashCode();
+			return Amout.GetHashCode();
 		}
 
 		public override bool Equals(object obj)
@@ -22,11 +22,12 @@
 			return result;
 		}
 
-		private readonly double _amout;
 
 		public Order(double amout)
 		{
-			_amout = amout;
+			Amout = amout;
 		}
+
+		public object Amout { get; private set; }
 	}
 }

@@ -22,11 +22,13 @@ namespace _128_CarpaccioFonctionnalTest
 		    var carpaccioProgram = new CarpaccioProgram(orderRepository, submitEvent);
 
 		    // when the user select couple of item / price
-			submitEvent.Publish();
-
+			submitEvent.Publish();		    
 
 			// Then the order is count * price * 6.85 
-		    Check.That(orders.First()).Equals(new Order(price*count*6.85));
+			Assert.Equal(orders.First(), new Order(price * count * 6.85));
+			//Check.That(orders.First()).Equals(new Order(price * count * 6.85));
 	    }
+
+
     }
 }

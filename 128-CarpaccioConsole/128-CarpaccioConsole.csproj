@@ -43,11 +43,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CarpaccioConsoleProgram.cs" />
+    <Compile Include="ConsoleReadLineAdapter.cs" />
+    <Compile Include="IConsoleReadLine.cs" />
+    <Compile Include="IConsoleWriteLine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\128-CarpaccioModel\128-CarpaccioModel.csproj">
+      <Project>{DE2F03CB-2C0C-41A8-AD7A-03ECBFFC6E63}</Project>
+      <Name>128-CarpaccioModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
