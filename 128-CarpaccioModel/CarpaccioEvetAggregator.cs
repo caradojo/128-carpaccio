@@ -8,7 +8,10 @@ namespace _128_CarpaccioModel
 
 		public void PublishSubmit()
 		{
-			
+			if (SubmitEvent != null)
+			{
+				SubmitEvent(this, EventArgs.Empty);
+			}
 		}
 	}
 }
