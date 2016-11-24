@@ -1,13 +1,20 @@
-﻿namespace _128_CarpaccioModel
+﻿using System;
+
+namespace _128_CarpaccioModel
 {
 	public class CarpaccioProgram
 	{
-		private readonly IOrderService _orderRepository;
+		private readonly IOrderService _orderService;
 
-		public CarpaccioProgram(IOrderService orderRepository)
+		public CarpaccioProgram(IOrderService orderService, ICarpaccioEventAggregator carpaccioEventAggregator)
 		{
-			_orderRepository = orderRepository;
-			throw new System.NotImplementedException();
+			_orderService = orderService;
+			carpaccioEventAggregator.SubmitEvent += OnSubmit;
+		}
+
+		private void OnSubmit(object sender, EventArgs e)
+		{
+			_orderService.SendOrder(new Order[]{ new Order(0.0) });
 		}
 	}
 }

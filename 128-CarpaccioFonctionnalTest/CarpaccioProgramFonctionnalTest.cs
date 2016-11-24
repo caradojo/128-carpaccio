@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using FakeItEasy;
 using Xunit;
 using NFluent;
@@ -17,7 +18,7 @@ namespace _128_CarpaccioFonctionnalTest
 		    IEnumerable<Order> orders = null;
 		    A.CallTo(() => orderRepository.SendOrder(A<IEnumerable<Order>>.Ignored)).Invokes(s => orders = s.GetArgument<IEnumerable<Order>>(0));
 
-			var carpaccioProgram = new CarpaccioProgram(orderRepository);
+			var carpaccioProgram = new CarpaccioProgram(orderRepository, new CarpaccioEvetAggregator());
 		    // when the user select couple of item / price
 
 
@@ -26,4 +27,6 @@ namespace _128_CarpaccioFonctionnalTest
 		    Check.That(order).Equals(new Order(price*count));
 	    }
     }
+
+
 }
