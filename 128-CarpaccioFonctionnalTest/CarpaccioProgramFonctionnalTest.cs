@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using FakeItEasy;
 using Xunit;
 using NFluent;
@@ -17,14 +18,15 @@ namespace _128_CarpaccioFonctionnalTest
 		    var orderRepository = A.Fake<IOrderService>();
 		    IEnumerable<Order> orders = null;
 		    A.CallTo(() => orderRepository.SendOrder(A<IEnumerable<Order>>.Ignored)).Invokes(s => orders = s.GetArgument<IEnumerable<Order>>(0));
+		    var carpaccioEventAggregator = new CarpaccioEvetAggregator();
+		    var carpaccioProgram = new CarpaccioProgram(orderRepository, carpaccioEventAggregator);
 
-			var carpaccioProgram = new CarpaccioProgram(orderRepository, new CarpaccioEvetAggregator());
 		    // when the user select couple of item / price
 
 
+
 			// Then the order is count * price * 6.85 
-		    var order = new Order(0);
-		    Check.That(order).Equals(new Order(price*count));
+		    Check.That(orders.First()).Equals(new Order(price*count));
 	    }
     }
 

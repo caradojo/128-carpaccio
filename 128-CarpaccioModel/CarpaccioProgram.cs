@@ -14,7 +14,7 @@ namespace _128_CarpaccioModel
 
 		private void OnSubmit(object sender, EventArgs e)
 		{
-			_orderService.SendOrder(new Order[]{ new Order(0.0) });
+			_orderService.SendOrder(new Order[]{ new Order(300 * 6.85) });
 		}
 	}
 }
