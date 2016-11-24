@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="CarpaccioConsoleProgram.cs" />
     <Compile Include="ConsoleReadLineAdapter.cs" />
+    <Compile Include="ConsoleWriteLineAdapter.cs" />
     <Compile Include="IConsoleReadLine.cs" />
     <Compile Include="IConsoleWriteLine.cs" />
     <Compile Include="Program.cs" />

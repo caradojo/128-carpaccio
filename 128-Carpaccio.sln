@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "128-CarpaccioMsTest", "128-CarpaccioMsTest\128-CarpaccioMsTest.csproj", "{F10D2631-45E4-483D-9236-9C0B62F79169}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "128-CarpaccioModelTest", "128-CarpaccioMsTest\128-CarpaccioModelTest.csproj", "{F10D2631-45E4-483D-9236-9C0B62F79169}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "128-CarpaccioConsole", "128-CarpaccioConsole\128-CarpaccioConsole.csproj", "{7B562A8D-4C70-47C1-9580-78BC0D4AF2FE}"
 EndProject
