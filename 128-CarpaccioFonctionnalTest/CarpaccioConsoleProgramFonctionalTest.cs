@@ -16,10 +16,8 @@ namespace _128_CarpaccioFonctionnalTest
 		[InlineData(100.00, 3)]
 		public void buy_items_of_same_price_without_discount_for_uthah(double price, int count)
 		{
-			var output = new StringBuilder();
-			var consoleWriteLine = A.Fake<IConsoleWriteLine>();
-			A.CallTo(() => consoleWriteLine.WriteLine(A<string>.Ignored)).Invokes(s => output.AppendLine(s.GetArgument<string>(0)));
 			var consoleReadLine = new ConsoleReadLineForTest();
+			var consoleWriteLine = new ConsoleWriteLineForTest();
 			var carpaccioProgram = new CarpaccioConsoleProgram(consoleWriteLine, consoleReadLine);
 			carpaccioProgram.Start();
 
@@ -27,7 +25,27 @@ namespace _128_CarpaccioFonctionnalTest
 			consoleReadLine.PressEnter();
 
 			// Then the order is count * price * 6.85 
-			Check.That(output.ToString()).EndsWith(string.Format("Total  {0:F}" + Environment.NewLine, price * count * 6.85));
+			Check.That(consoleWriteLine.Output).EndsWith(string.Format("Total  {0:F}" + Environment.NewLine, price * count * 6.85));
+		}
+	}
+
+	public class ConsoleWriteLineForTest : IConsoleWriteLine
+	{
+		private readonly StringBuilder _output;
+
+		public ConsoleWriteLineForTest()
+		{
+			_output = new StringBuilder();
+		}
+
+		public string Output
+		{
+			get { return _output.ToString(); }
+		}
+
+		public void WriteLine(string line)
+		{
+			_output.AppendLine(line);
 		}
 	}
 }
