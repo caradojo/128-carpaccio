@@ -2,7 +2,7 @@
 
 namespace _128_CarpaccioModel
 {
-	public class SubmitEvent : ICarpaccioEventAggregator
+	public class SubmitEvent : ISubmitEvent
 	{
 		public event EventHandler Event;
 

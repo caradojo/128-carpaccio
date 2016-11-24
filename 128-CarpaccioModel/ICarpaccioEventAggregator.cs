@@ -2,7 +2,7 @@
 
 namespace _128_CarpaccioModel
 {
-	public interface ICarpaccioEventAggregator
+	public interface ISubmitEvent
 	{
 		event EventHandler Event;
 	}

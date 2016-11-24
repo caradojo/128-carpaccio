@@ -6,7 +6,7 @@ namespace _128_CarpaccioModel
 	{
 		private readonly IOrderService _orderService;
 
-		public CarpaccioProgram(IOrderService orderService, ICarpaccioEventAggregator carpaccioEventAggregator)
+		public CarpaccioProgram(IOrderService orderService, ISubmitEvent carpaccioEventAggregator)
 		{
 			_orderService = orderService;
 			carpaccioEventAggregator.Event += On;

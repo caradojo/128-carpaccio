@@ -15,10 +15,10 @@ namespace _128_CarpaccioMsTest
 		public void send_order_when_submit_event_is_raised()
 		{
 			var orderRepository = A.Fake<IOrderService>();
-			var carpaccioEventAggregator = A.Fake<ICarpaccioEventAggregator>();
-			var carpaccioProgram = new CarpaccioProgram(orderRepository, carpaccioEventAggregator);
+			var submitEvent = A.Fake<ISubmitEvent>();
+			var carpaccioProgram = new CarpaccioProgram(orderRepository, submitEvent);
 
-			carpaccioEventAggregator.Event += Raise.WithEmpty().Now;
+			submitEvent.Event += Raise.WithEmpty().Now;
 
 			A.CallTo(() => orderRepository.SendOrder(A<IEnumerable<Order>>.Ignored)).MustHaveHappened(Repeated.Exactly.Once);
 		}
