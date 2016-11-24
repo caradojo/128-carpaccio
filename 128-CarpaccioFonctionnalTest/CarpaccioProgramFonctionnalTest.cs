@@ -17,7 +17,7 @@ namespace _128_CarpaccioFonctionnalTest
 		    IEnumerable<Order> orders = null;
 		    A.CallTo(() => orderRepository.SendOrder(A<IEnumerable<Order>>.Ignored)).Invokes(s => orders = s.GetArgument<IEnumerable<Order>>(0));
 
-		    var carpaccioProgram = new CarpaccioProgram();
+			var carpaccioProgram = new CarpaccioProgram(orderRepository);
 		    // when the user select couple of item / price
 
 
