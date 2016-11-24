@@ -1,0 +1,31 @@
+﻿using System.Collections.Generic;
+using System.Linq;
+using FakeItEasy;
+using NFluent;
+using Xunit;
+using _128_CarpaccioConsole;
+using _128_CarpaccioModel;
+
+namespace _128_CarpaccioFonctionnalTest
+{
+	public class CarpaccioConsoleProgramFonctionalTest
+	{
+		[Theory]
+		[InlineData(100.00, 3)]
+		public void buy_items_of_same_price_without_discount_for_uthah(double price, int count)
+		{
+			var orderRepository = A.Fake<IOrderService>();
+			IEnumerable<Order> orders = null;
+			A.CallTo(() => orderRepository.SendOrder(A<IEnumerable<Order>>.Ignored)).Invokes(s => orders = s.GetArgument<IEnumerable<Order>>(0));
+			var submitEvent = new SubmitEvent();
+			var carpaccioProgram = new CarpaccioConsoleProgram();
+
+			// when the user select couple of item / price
+			submitEvent.Publish();
+
+
+			// Then the order is count * price * 6.85 
+			Check.That(orders.First()).Equals(new Order(price * count * 6.85));
+		}
+	}
+}

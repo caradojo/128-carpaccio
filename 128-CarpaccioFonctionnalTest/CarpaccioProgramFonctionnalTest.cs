@@ -29,6 +29,4 @@ namespace _128_CarpaccioFonctionnalTest
 		    Check.That(orders.First()).Equals(new Order(price*count*6.85));
 	    }
     }
-
-
 }
