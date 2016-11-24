@@ -9,10 +9,10 @@ namespace _128_CarpaccioModel
 		public CarpaccioProgram(IOrderService orderService, ICarpaccioEventAggregator carpaccioEventAggregator)
 		{
 			_orderService = orderService;
-			carpaccioEventAggregator.SubmitEvent += OnSubmit;
+			carpaccioEventAggregator.Event += On;
 		}
 
-		private void OnSubmit(object sender, EventArgs e)
+		private void On(object sender, EventArgs e)
 		{
 			_orderService.SendOrder(new Order[]{ new Order(300 * 6.85) });
 		}

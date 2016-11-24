@@ -71,7 +71,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="CarpaccioEvetAggregatorShould.cs" />
+    <Compile Include="SubmitEventShould.cs" />
     <Compile Include="CarpaccioProgramShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

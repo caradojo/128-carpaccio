@@ -18,7 +18,7 @@ namespace _128_CarpaccioMsTest
 			var carpaccioEventAggregator = A.Fake<ICarpaccioEventAggregator>();
 			var carpaccioProgram = new CarpaccioProgram(orderRepository, carpaccioEventAggregator);
 
-			carpaccioEventAggregator.SubmitEvent += Raise.WithEmpty().Now;
+			carpaccioEventAggregator.Event += Raise.WithEmpty().Now;
 
 			A.CallTo(() => orderRepository.SendOrder(A<IEnumerable<Order>>.Ignored)).MustHaveHappened(Repeated.Exactly.Once);
 		}
