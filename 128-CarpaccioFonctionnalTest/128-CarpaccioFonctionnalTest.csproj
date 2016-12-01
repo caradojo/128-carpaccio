@@ -60,6 +60,7 @@
     <Compile Include="CarpaccioConsoleProgramFonctionalTest.cs" />
     <Compile Include="CarpaccioProgramFonctionnalTest.cs" />
     <Compile Include="ConsoleReadLineForTest.cs" />
+    <Compile Include="ConsoleWriteLineForTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

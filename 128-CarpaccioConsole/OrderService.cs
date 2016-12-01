@@ -20,4 +20,4 @@ namespace _128_CarpaccioConsole
 			}
 		}
 	}
-}
+}		

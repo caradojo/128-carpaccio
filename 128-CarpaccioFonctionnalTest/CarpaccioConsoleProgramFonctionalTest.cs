@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using FakeItEasy;
 using NFluent;
 using Xunit;
@@ -26,26 +25,6 @@ namespace _128_CarpaccioFonctionnalTest
 
 			// Then the order is count * price * 6.85 
 			Check.That(consoleWriteLine.Output).EndsWith(string.Format("Total  {0:F}" + Environment.NewLine, price * count * 6.85));
-		}
-	}
-
-	public class ConsoleWriteLineForTest : IConsoleWriteLine
-	{
-		private readonly StringBuilder _output;
-
-		public ConsoleWriteLineForTest()
-		{
-			_output = new StringBuilder();
-		}
-
-		public string Output
-		{
-			get { return _output.ToString(); }
-		}
-
-		public void WriteLine(string line)
-		{
-			_output.AppendLine(line);
 		}
 	}
 }
