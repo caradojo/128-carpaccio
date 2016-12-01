@@ -39,9 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SubmitEvent.cs" />
     <Compile Include="CarpaccioProgram.cs" />
-    <Compile Include="ICarpaccioEventAggregator.cs" />
     <Compile Include="IOrderService.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

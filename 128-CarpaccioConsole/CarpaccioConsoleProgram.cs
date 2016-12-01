@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using _128_CarpaccioModel;
+﻿using _128_CarpaccioModel;
 
 namespace _128_CarpaccioConsole
 {
@@ -9,7 +6,6 @@ namespace _128_CarpaccioConsole
 	{
 		private readonly IConsoleWriteLine _consoleWriteLine;
 		private readonly IConsoleReadLine _consoleReadLine;
-		private SubmitEvent _submitEvent;
 		private CarpaccioProgram _carpaccioProgram;
 
 		public CarpaccioConsoleProgram(IConsoleWriteLine consoleWriteLine, IConsoleReadLine consoleReadLine)
@@ -19,9 +15,7 @@ namespace _128_CarpaccioConsole
 
 			_consoleReadLine.NewLineEvent += OnNewLine;
 
-			_submitEvent = new SubmitEvent();
-
-			_carpaccioProgram = new CarpaccioProgram(new OrderService(_consoleWriteLine), _submitEvent);
+			_carpaccioProgram = new CarpaccioProgram(new OrderService(_consoleWriteLine));
 		}
 
 		public void Start()
@@ -33,25 +27,7 @@ namespace _128_CarpaccioConsole
 
 		private void OnNewLine(object sender, string e)
 		{
-			_submitEvent.Publish();
-		}
-	}
-
-	public class OrderService : IOrderService
-	{
-		private readonly IConsoleWriteLine _consoleWriteLine;
-
-		public OrderService(IConsoleWriteLine consoleWriteLine)
-		{
-			_consoleWriteLine = consoleWriteLine;
-		}
-
-		public void SendOrder(IEnumerable<Order> orders)
-		{
-			foreach (var order in orders)
-			{
-				_consoleWriteLine.WriteLine(string.Format("Total  {0:F}", order.Amout));
-			}
+			_carpaccioProgram.Submit();
 		}
 	}
 }

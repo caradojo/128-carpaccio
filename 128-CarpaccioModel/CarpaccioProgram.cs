@@ -6,15 +6,14 @@ namespace _128_CarpaccioModel
 	{
 		private readonly IOrderService _orderService;
 
-		public CarpaccioProgram(IOrderService orderService, ISubmitEvent carpaccioEventAggregator)
+		public CarpaccioProgram(IOrderService orderService)
 		{
 			_orderService = orderService;
-			carpaccioEventAggregator.Event += On;
 		}
 
-		private void On(object sender, EventArgs e)
+		public void Submit()
 		{
-			_orderService.SendOrder(new Order[]{ new Order(300 * 6.85) });
+			_orderService.SendOrder(new Order[] {new Order(300*6.85)});
 		}
 	}
 }

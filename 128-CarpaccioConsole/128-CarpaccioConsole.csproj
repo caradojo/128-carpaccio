@@ -47,6 +47,7 @@
     <Compile Include="ConsoleWriteLineAdapter.cs" />
     <Compile Include="IConsoleReadLine.cs" />
     <Compile Include="IConsoleWriteLine.cs" />
+    <Compile Include="OrderService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

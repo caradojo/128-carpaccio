@@ -17,16 +17,14 @@ namespace _128_CarpaccioFonctionnalTest
 	    {
 		    var orderRepository = A.Fake<IOrderService>();
 		    IEnumerable<Order> orders = null;
-		    A.CallTo(() => orderRepository.SendOrder(A<IEnumerable<Order>>.Ignored)).Invokes(s => orders = s.GetArgument<IEnumerable<Order>>(0));
-		    var submitEvent = new SubmitEvent();
-		    var carpaccioProgram = new CarpaccioProgram(orderRepository, submitEvent);
+		    A.CallTo(() => orderRepository.SendOrder(A<IEnumerable<Order>>.Ignored)).Invokes(s => orders = s.GetArgument<IEnumerable<Order>>(0));		    
+		    var carpaccioProgram = new CarpaccioProgram(orderRepository);
 
 		    // when the user select couple of item / price
-			submitEvent.Publish();		    
+			carpaccioProgram.Submit();		    
 
 			// Then the order is count * price * 6.85 
 			Assert.Equal(orders.First(), new Order(price * count * 6.85));
-			//Check.That(orders.First()).Equals(new Order(price * count * 6.85));
 	    }
 
 

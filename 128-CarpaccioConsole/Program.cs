@@ -14,7 +14,6 @@ namespace _128_CarpaccioConsole
 
 			Console.WriteLine("Appuyer sur une touche pour terminer");
 			Console.ReadLine();
-
 		}
 	}
 }

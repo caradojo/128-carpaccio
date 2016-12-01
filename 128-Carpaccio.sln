@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "128-CarpaccioModel", "128-C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarpaccioConsoleTest", "CarpaccioConsoleTest\CarpaccioConsoleTest.csproj", "{AA45D7F7-3498-4FE6-AB4B-4475BECCA904}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{593D4F97-E93C-421A-8B91-CDB0DB547317}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,5 +42,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AA45D7F7-3498-4FE6-AB4B-4475BECCA904} = {593D4F97-E93C-421A-8B91-CDB0DB547317}
+		{F10D2631-45E4-483D-9236-9C0B62F79169} = {593D4F97-E93C-421A-8B91-CDB0DB547317}
+		{090070D7-39DC-4968-B669-0E98881DBDE7} = {593D4F97-E93C-421A-8B91-CDB0DB547317}
 	EndGlobalSection
 EndGlobal

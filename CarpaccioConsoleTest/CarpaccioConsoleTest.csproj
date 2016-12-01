@@ -52,12 +52,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CarpaccioConsoleProgramShould.cs" />
+    <Compile Include="OrderServiceShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\128-CarpaccioConsole\128-CarpaccioConsole.csproj">
       <Project>{7B562A8D-4C70-47C1-9580-78BC0D4AF2FE}</Project>
       <Name>128-CarpaccioConsole</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\128-CarpaccioModel\128-CarpaccioModel.csproj">
+      <Project>{DE2F03CB-2C0C-41A8-AD7A-03ECBFFC6E63}</Project>
+      <Name>128-CarpaccioModel</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

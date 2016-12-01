@@ -20,7 +20,7 @@ namespace _128_CarpaccioFonctionnalTest
 			var consoleWriteLine = new ConsoleWriteLineForTest();
 			var carpaccioProgram = new CarpaccioConsoleProgram(consoleWriteLine, consoleReadLine);
 			carpaccioProgram.Start();
-
+	
 			// when the user select couple of item / price
 			consoleReadLine.PressEnter();
 
